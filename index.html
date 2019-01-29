@@ -99,14 +99,12 @@ cellTowers= L.geoJson.ajax("/cell_towers.geojson",{
      // assign a function to the onEachFeature parameter of the cellTowers object.
 // Then each (point) feature will bind a popup window.
 // The content of the popup window is the value of `feature.properties.company`
- on EachFeature: function (feature, layer) {
+ onEachFeature: function (feature, layer) {
     layer.bindPopup(feature.properties.company);
 },   
     // create the county layer, removed assests directory from counties file
 L.geoJson.ajax("/counties.geojson").addTo(mymap);
-    
-    
-    //6
+          // 6. Set function for color ramp
     function setColor(density) {
         var id = 0;
         if (density > 18) { id = 4; }
