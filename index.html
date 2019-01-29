@@ -76,7 +76,8 @@ var cellTowers = null;
     }
 
 // Get GeoJSON and put on it on the map when it loads
-cellTowers= L.geoJson.ajax("assets/cell_towers.geojson",{
+    //Removed assets directory slash from celltowers file
+cellTowers= L.geoJson.ajax("cell_towers.geojson",{
      onEachFeature: function (feature, layer) {
             layer.bindPopup(feature.properties.company);
         },
@@ -103,8 +104,8 @@ cellTowers= L.geoJson.ajax("assets/cell_towers.geojson",{
 onEachFeature: function (feature, layer) {
     layer.bindPopup(feature.properties.company);
 },   
-    // create the county layer
-L.geoJson.ajax("assets/counties.geojson").addTo(mymap);
+    // create the county layer, removed assests directory from counties file
+L.geoJson.ajax("counties.geojson").addTo(mymap);
     
     
     //6
@@ -131,9 +132,9 @@ L.geoJson.ajax("assets/counties.geojson").addTo(mymap);
     }
     
     // 8. Add county polygons
-    // create counties variable, and assign null to it.
+    // create counties variable, and assign null to it. Removed assets folder from counties file. 
     var counties = null;
-    counties = L.geoJson.ajax("assets/counties.geojson", {
+    counties = L.geoJson.ajax("counties.geojson", {
         style: style
     }).addTo(mymap);
     
