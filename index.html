@@ -95,14 +95,7 @@ cellTowers= L.geoJson.ajax("/cell_towers.geojson",{
         },
         attribution: 'Cell Tower Data &copy; Map Cruzin | Oregon counties &copy; Oregon Explorer | Base Map &copy; CartoDB | Made By Bo Zhao'
     }).addTo(mymap);
-    
-     // assign a function to the onEachFeature parameter of the cellTowers object.
-// Then each (point) feature will bind a popup window.
-// The content of the popup window is the value of `feature.properties.company`
- onEachFeature: function (feature, layer) {
-    layer.bindPopup(feature.properties.company);
-},   
-    // create the county layer, removed assests directory from counties file
+       // create the county layer, removed assests directory from counties file
 L.geoJson.ajax("/counties.geojson").addTo(mymap);
           // 6. Set function for color ramp
     function setColor(density) {
