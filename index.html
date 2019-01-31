@@ -73,8 +73,8 @@ var cellTowers = null;
     var colors = chroma.scale('Dark2').mode('lch').colors(9);
     
     // 5. dynamically append style classes to this page. This style classes will be used for colorize the markers. removed $ from in front of head below and then put it back, it was causing error in G-inspector.
-    //for (i = 0; i < 9; i++) 
-    //{('head').append($("<style>.marker-color") + (i + 1).toString() + {("color:" + colors[i] + "; font-size: 15px;)} 
+    for (i = 0; i < 9; i++) 
+    {('head').append($("<style>.marker-color") + (i + 1).toString() + {("color:" + colors[i] + "; font-size: 15px;)} 
     // Get GeoJSON and put on it on the map when it loads
     //Removed assets directory slash from celltowers file
 cellTowers= L.geoJson.ajax("cell_towers.geojson",{
