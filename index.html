@@ -79,7 +79,7 @@ var cellTowers = null;
   
 // Get GeoJSON and put on it on the map when it loads
     //Removed assets directory slash from celltowers file
-cellTowers= L.geoJson.ajax("/cell_towers.geojson",{
+cellTowers= L.geoJson.ajax("cell_towers.geojson",{
      onEachFeature: function (feature, layer) {
             layer.bindPopup(feature.properties.company);
         },
@@ -100,7 +100,7 @@ cellTowers= L.geoJson.ajax("/cell_towers.geojson",{
         attribution: 'Cell Tower Data &copy; Map Cruzin | Oregon counties &copy; Oregon Explorer | Base Map &copy; CartoDB | Made By Bo Zhao'
     }).addTo(mymap);
        // create the county layer, removed assests directory from counties file
-L.geoJson.ajax("/counties.geojson").addTo(mymap);
+L.geoJson.ajax("counties.geojson").addTo(mymap);
           // 6. Set function for color ramp
     function setColor(density) {
         var id = 0;
@@ -127,7 +127,7 @@ L.geoJson.ajax("/counties.geojson").addTo(mymap);
     // 8. Add county polygons
     // create counties variable, and assign null to it. Removed assets folder from counties file. 
     var counties = null;
-    counties = L.geoJson.ajax("/counties.geojson", {
+    counties = L.geoJson.ajax("counties.geojson", {
         style: style
     }).addTo(mymap);
     
