@@ -2,8 +2,31 @@
 lab3
 5. Deliverable
 After you successfully deploy this cell tower map, you are expected to build another web map of airports in United States. In the assets directory of this lab, you will see two geojson files: one is airports.geojson, another is us-states.geojson.
-
+=========================================================================================================================
 OK, I got the cell tower map to display in Chrome. I made a screen shot of this called: cellphonetowers_screenshot.jpg and placed it in this directory.  
+
+The project name is a scaleable map entitled: "Airports of the United States".
+
+Two map layers were used including a United States base map and a map of airports across the United States. One of the fields in the airport layer was control towers, named: CTRL_TRS. This field was used to indicate whether the airport had a control tower or not. Therefore a Javascript function was added, within MapBox layer panel, to indicate the presence of a tower on the map with a "Y" for yes and a "N" for no.
+
+Methods for this project include: The map projection was updated to CRS: WGS-84 projection using QGIS. The file was added to QGIS as a layer then Under the layer properties the projection was changed as well as a few other attributes to make the U.S. Layer compatible with a web environment. The number of digits in the coordinates was reduced from 15 characters to 10 characters to make the data load efficiently on the webpage. In order to reduce the map coverage further, the map files were opened in mapshaper.org. After simplifying the code in mapshaper.org the files were uploaded to MapBox for making the final display edits.
+
+The source of united states base map and the distribution of airports came from Professor Zhao, who downloaded the maps from Mike Bostock of D3 in the form of geojson files. The map elements were combined in MapBox including the color scheme and the icons were created with the help of all maki icons. The completed map was published using the MapBox provided code, that was pasted into the Github index file. Several versions of this code were saved on the local labtop hard drive to control for errors. Github was used to display the final map webpage in the Index file, seen at the following URL: https://burkr.github.io/maps/.
+
+[your_repository_name]
+    │index.html
+    │readme.md
+    ├─assets
+    │      airports.geojson
+    │      us-states.geojson
+    ├─css
+    │      main.css
+    ├─img
+    │      xxx.jpg
+    └─js
+            main.js
+
+===================================================================================================================
 
 airports.geojson contains all the airports in United States. This data is converted from a shapefile, which was downloaded and unzipped from https://catalog.data.gov/dataset/usgs-small-scale-dataset-airports-of-the-united-states-201207-shapefile. For each airport feature, the field CNTL_TWR indicates whether the airport has an air traffic control tower or not. If there is a tower, the value of CNTL_TWR is 'Y', otherwise 'N'. You may need to find an appropriate icon on font awesome. (7 points)
 
