@@ -94,7 +94,7 @@ airports= L.geoJson.ajax("airports.geojson",{
             else if (feature.properties.company == "Medford Cellular")  { id = 6; }
             else if (feature.properties.company == "Oregon RSA")  { id = 7; }
             else { id = 8;} // "Salem Cellular"
-            return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-signal marker-color-' + (id + 1).toString() })});
+            return L.marker(latlng, {icon: L.divIcon({className: 'fas fa-plane-departure' + (id + 1).toString() })});
         },
         attribution: 'Airports Data &copy; Map Cruzin | Oregon counties &copy; Oregon Explorer | Base Map &copy; CartoDB | Made By Bo Zhao'
     }).addTo(mymap);
@@ -141,15 +141,15 @@ legend.onAdd = function () {
     div.innerHTML += '<i style="background: ' + colors[1] + '; opacity: 0.5"></i><p> 6-10</p>';
     div.innerHTML += '<i style="background: ' + colors[0] + '; opacity: 0.5"></i><p> 0- 5</p>';
     div.innerHTML += '<hr><b>Company<b><br />';
-    div.innerHTML += '<i class="fa fa-signal marker-color-1"></i><p> New Cingular</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-2"></i><p> Cello</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-3"></i><p> RCC Minnesota</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-4"></i><p> Verizon</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-5"></i><p> US Cellular</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-6"></i><p> Hood River Cellular</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-7"></i><p> Medford Cellular</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-8"></i><p> Oregon RSA</p>';
-    div.innerHTML += '<i class="fa fa-signal marker-color-9"></i><p> Salem Cellular</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-1"></i><p> New Cingular</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-2"></i><p> Cello</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-3"></i><p> RCC Minnesota</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-4"></i><p> Verizon</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-5"></i><p> US Cellular</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-6"></i><p> Hood River Cellular</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-7"></i><p> Medford Cellular</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-8"></i><p> Oregon RSA</p>';
+    div.innerHTML += '<i class="fas fa-plane-departure-9"></i><p> Salem Cellular</p>';
     // Return the Legend div containing the HTML content
     return div;
 };
