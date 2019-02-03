@@ -1,5 +1,5 @@
 // 1. Create a map object.
-var mymap = L.map('map', {
+var mymap = L.map('airports', {
     center: [44.13, -119.93],
     zoom: 7,
     maxZoom: 10,
@@ -23,7 +23,7 @@ for (i = 0; i < 9; i++) {
 }
 
 // Get GeoJSON and put on it on the map when it loads
-cellTowers= L.geoJson.ajax("assets/airports.geojson", {
+airports= L.geoJson.ajax("assets/airports.geojson", {
     // assign a function to the onEachFeature parameter of the cellTowers object.
     // Then each (point) feature will bind a popup window.
     // The content of the popup window is the value of `feature.properties.company`
@@ -74,7 +74,7 @@ function style(feature) {
 
 // 8. Add county polygons
 // create counties variable, and assign null to it.
-var counties = null;
+var us-states = null;
 counties = L.geoJson.ajax("assets/us-states.geojson", {
     style: style
 }).addTo(mymap);
@@ -109,7 +109,7 @@ legend.onAdd = function () {
 };
 
 // 11. Add a legend to map
-legend.addTo(mymap);
+legend.addTo(airports);
 
 // 12. Add a scale bar to map
 L.control.scale({position: 'bottomleft'}).addTo(mymap);
