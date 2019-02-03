@@ -11,7 +11,7 @@ L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(
 
 // 3. Add cell towers GeoJSON Data
 // Null variable that will hold cell tower data
-var cellTowers = null;
+var airports = null;
 
 
 // 4. build up a set of colors from colorbrewer's dark2 category
@@ -23,7 +23,7 @@ for (i = 0; i < 9; i++) {
 }
 
 // Get GeoJSON and put on it on the map when it loads
-cellTowers= L.geoJson.ajax("assets/cell_towers.geojson", {
+cellTowers= L.geoJson.ajax("assets/airports.geojson", {
     // assign a function to the onEachFeature parameter of the cellTowers object.
     // Then each (point) feature will bind a popup window.
     // The content of the popup window is the value of `feature.properties.company`
@@ -43,7 +43,7 @@ cellTowers= L.geoJson.ajax("assets/cell_towers.geojson", {
         else { id = 8;} // "Salem Cellular"
         return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-signal marker-color-' + (id + 1).toString() })});
     },
-    attribution: 'Cell Tower Data &copy; Map Cruzin | Oregon counties &copy; Oregon Explorer | Base Map &copy; CartoDB | Made By Bo Zhao'
+    attribution: 'Airport Data &copy; Map Cruzin | Oregon counties &copy; Oregon Explorer | Base Map &copy; CartoDB | Made By Rene Burk'
 }).addTo(mymap);
 
 
@@ -60,7 +60,6 @@ function setColor(density) {
     return colors[id];
 }
 
-
 // 7. Set style function that sets fill color.md property equal to cell tower density
 function style(feature) {
     return {
@@ -76,7 +75,7 @@ function style(feature) {
 // 8. Add county polygons
 // create counties variable, and assign null to it.
 var counties = null;
-counties = L.geoJson.ajax("assets/counties.geojson", {
+counties = L.geoJson.ajax("assets/us-states.geojson", {
     style: style
 }).addTo(mymap);
 
