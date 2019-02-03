@@ -48,8 +48,7 @@
                 
 //.info h1 {    need for top little window
             }
-            
-            
+                       
         </style>
        <body>    
    <!-- Our web map and content will go here -->
@@ -95,7 +94,7 @@ airports= L.geoJson.ajax("airports.geojson",{
             else { id = 8;} // "Salem Cellular"
             return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-signal marker-color-' + (id + 1).toString() })});
         },
-        attribution: 'Cell Tower Data &copy; Map Cruzin | Oregon counties &copy; Oregon Explorer | Base Map &copy; CartoDB | Made By Bo Zhao'
+        attribution: 'Airports Data &copy; Map Cruzin | Oregon counties &copy; Oregon Explorer | Base Map &copy; CartoDB | Made By Bo Zhao'
     }).addTo(mymap);
        // create the county layer, removed assests directory from counties file
 L.geoJson.ajax("us-states.geojson").addTo(mymap);
@@ -133,7 +132,7 @@ var legend = L.control({position: 'topright'});
 legend.onAdd = function () {
     // Create Div Element and Populate it with HTML
     var div = L.DomUtil.create('div', 'legend');
-    div.innerHTML += '<b># Cell Tower</b><br />';
+    div.innerHTML += '<b># Airports</b><br />';
     div.innerHTML += '<i style="background: ' + colors[4] + '; opacity: 0.5"></i><p>19+</p>';
     div.innerHTML += '<i style="background: ' + colors[3] + '; opacity: 0.5"></i><p>14-18</p>';
     div.innerHTML += '<i style="background: ' + colors[2] + '; opacity: 0.5"></i><p>11-13</p>';
