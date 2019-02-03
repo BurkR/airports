@@ -13,7 +13,7 @@ Methods for this project include: The map projection was updated to CRS: WGS-84 
 
 The source of united states base map and the distribution of airports came from Professor Zhao, who downloaded the maps from Mike Bostock of D3 in the form of geojson files. The map elements were combined in MapBox including the color scheme and the icons were created with the help of all maki icons. The completed map was published using the MapBox provided code, that was pasted into the Github index file. Several versions of this code were saved on the local labtop hard drive to control for errors. Github was used to display the final map webpage in the Index file, seen at the following URL: https://burkr.github.io/maps/.
 
-[your_repository_name]
+[airports]
     │index.html
     │readme.md
     ├─assets
